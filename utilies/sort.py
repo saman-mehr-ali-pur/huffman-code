@@ -8,7 +8,6 @@ import modules.classes
 
 
 def sort_by_values(keys,values):
-
     if (len(keys)== 1):
         return keys,values
     if (len(keys) == 2):
@@ -59,44 +58,38 @@ def merge(left_keys,left_values,right_keys,right_values):
 
 
 def sort_nodes(nodes):
-    if (len(nodes == 1)):
-        return nodes
-    elif (len(nodes)==2):
-        if (nodes[0].data>nodes[1].data):
-            nodes[0].data,nodes[1].data = nodes[1].data,nodes[0].data
-        
-        return nodes
+    if len(nodes) > 1:
+        mid = len(nodes) // 2  # Finding the mid of the array
+        left = nodes[:mid]  # Dividing the array elements
+        right = nodes[mid:]  # into 2 halves
+
+        sort_nodes(left)
+        sort_nodes(right)
+
+        i = j = k = 0
+
+        #  data to temp arrays L[] and R[]
+        while i < len(left) and j < len(right):
+            if left[i].data < right[j].data:
+                nodes[k] = left[i]
+                i += 1
+            else:
+                nodes[k] = right[j]
+                j += 1
+            k += 1
+
+        # Checking if any element was left
+        while i < len(left):
+            nodes[k] = left[i]
+            i += 1
+            k += 1
+
+        while j < len(right):
+            nodes[k] = right[j]
+            j += 1
+            k += 1
     
-
-    middle = len(nodes)+1
-
-    left_nodes = sort_nodes(nodes[:middle])
-    right_nodes = sort_nodes(nodes[middle:])
-
-    result=[]
-
-    i=j=0
-
-    while i< len(left_nodes) and j< len(right_nodes):
-
-        if left_nodes[i].data<right_nodes[j].data:
-            result.append(left_nodes[i])
-            i+=1
-
-        else:
-            result.append(right_nodes[j])
-            j+=1
-
-        while i <len(left_nodes):
-            result.append(left_nodes[i])
-            i+=1
-
-        while j < len(right_nodes):
-            result.append(right_nodes)
-            j+=1
-
-
-    return result
+    
 
 
 
@@ -109,7 +102,10 @@ if __name__=='__main__':
 
     keys,values=sort_by_values(keys,values)
     print(keys)
-    print(__file__)
+    print(values)
+
+
+
 
 
 
