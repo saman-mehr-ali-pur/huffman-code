@@ -7,22 +7,22 @@ import modules.classes
 
 
 
-def sort_by_values(keys,values):
-    if (len(keys)== 1):
-        return keys,values
-    if (len(keys) == 2):
-        if (values[0]>values[1]):
-            values[0],values[1] = values[1],values[0]
-            keys[0],keys[1] = keys[1],values[0]
-        return keys,values
+# def sort_by_values(keys,values):
+#     if (len(keys)== 1):
+#         return keys,values
+#     if (len(keys) == 2):
+#         if (values[0]>values[1]):
+#             values[0],values[1] = values[1],values[0]
+#             keys[0],keys[1] = keys[1],values[0]
+#         return keys,values
     
 
-    middle = len(keys)//2
+#     middle = len(keys)//2
 
-    left_keys,left_values = sort_by_values(keys[:middle+1],values[:middle+1])
-    right_keys,right_values = sort_by_values(keys[middle+1:],values[middle+1:])
+#     left_keys,left_values = sort_by_values(keys[:middle+1],values[:middle+1])
+#     right_keys,right_values = sort_by_values(keys[middle+1:],values[middle+1:])
 
-    return merge(left_keys,left_values,right_keys,right_values)
+    # return merge(left_keys,left_values,right_keys,right_values)
 
 
 
