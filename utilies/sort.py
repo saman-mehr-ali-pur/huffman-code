@@ -7,56 +7,6 @@ import modules.classes
 
 
 
-# def sort_by_values(keys,values):
-#     if (len(keys)== 1):
-#         return keys,values
-#     if (len(keys) == 2):
-#         if (values[0]>values[1]):
-#             values[0],values[1] = values[1],values[0]
-#             keys[0],keys[1] = keys[1],values[0]
-#         return keys,values
-    
-
-#     middle = len(keys)//2
-
-#     left_keys,left_values = sort_by_values(keys[:middle+1],values[:middle+1])
-#     right_keys,right_values = sort_by_values(keys[middle+1:],values[middle+1:])
-
-    # return merge(left_keys,left_values,right_keys,right_values)
-
-
-
-def merge(left_keys,left_values,right_keys,right_values):
-    i=j=0
-    result_keys=[]
-    result_values=[]
-    while(i<len(left_keys) and j<len(right_keys)):
-        
-        if left_values[i]<right_values[j]:
-            result_keys.append(left_keys[i])
-            result_values.append(left_values[i])
-            i+=1
-        else:
-            result_values.append(right_values[j])
-            result_keys.append(right_keys[j])
-            j+=1
-
-       
-    while i<len(left_keys):
-        result_keys.append(left_keys[i])
-        result_values.append(left_values[i])
-        i+=1
-        
-
-    while j < len(right_keys):
-        result_keys.append(right_keys[j])
-        result_values.append(right_values[j])
-        j+=1
-        
-    return result_keys,result_values
-
-
-
 def sort_nodes(nodes):
     if len(nodes) > 1:
         mid = len(nodes) // 2  # Finding the mid of the array
@@ -90,20 +40,6 @@ def sort_nodes(nodes):
             k += 1
     
     
-
-
-
-
-
-
-if __name__=='__main__':
-    keys= ['b','c','d','a','e','f']
-    values = [1,3,5,2,0,4]
-
-    keys,values=sort_by_values(keys,values)
-    print(keys)
-    print(values)
-
 
 
 
