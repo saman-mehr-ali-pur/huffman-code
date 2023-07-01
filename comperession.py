@@ -54,6 +54,10 @@ def tree_genrator(nodes):                   #this method will make a tree with n
 
 
 
+
+
+
+
 def code_genrator(tree,codes,str_code):                 #this method will compute huffman code of
     if isinstance(tree,cls.leaf):                       # all symbles
         codes[tree.letter]= str_code

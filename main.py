@@ -105,7 +105,7 @@ while(True):
             exit(0)
         
         while(True):
-            print("another task? (type n or n for NO and y for yes)")
+            print("another task? (type n or NO for NO and y for YES)")
             x=input(">>> ")
             if x.strip()=="n":
                 print("GOOD LUCK :)")
